@@ -33,7 +33,7 @@ jobs:
         # Disabling shallow clone is recommended for improving relevancy of reporting
         fetch-depth: 0
     - name: SonarCloud Scan
-      uses: sonarsource/sonarcloud-github-action@master
+      run: ./mvnw -B verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=980de76631fc35d67417fb270b7d67a5cca61266
       env:
         GITHUB_TOKEN: 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
         SONAR_TOKEN: 980de76631fc35d67417fb270b7d67a5cca61266
