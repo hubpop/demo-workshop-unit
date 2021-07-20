@@ -25,13 +25,9 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Test with Maven
       run: mvn -B test --file pom.xml
-  sonarcloud:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-      with:
-        # Disabling shallow clone is recommended for improving relevancy of reporting
-        fetch-depth: 0
+      
+    - name: Before script
+      run: chmod +x mvnw
     - name: SonarCloud Scan
       run: ./mvnw -B verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=980de76631fc35d67417fb270b7d67a5cca61266
       env:
