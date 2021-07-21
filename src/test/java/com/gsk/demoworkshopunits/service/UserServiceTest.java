@@ -40,7 +40,7 @@ class UserServiceTest {
         Map<Long, User> returnedUser = service.findAll();
 
         //then
-        assertEquals(returnedUser.size(), 0);
+        assertEquals(0, returnedUser.size());
     }
 
     @Test
